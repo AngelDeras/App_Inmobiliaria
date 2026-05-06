@@ -25,7 +25,7 @@ namespace App_Inmobiliaria.PropertyTypes
 
         public Land(string sellerName, string clientName, string address, string propertyModel, double area, decimal months) : base("Terrenos", sellerName, clientName, address)
         {
-            switch (type)
+            switch (propertyModel)
             {
                 case "Residencial":
                     saleAmount = (decimal)area * 890m * months;
