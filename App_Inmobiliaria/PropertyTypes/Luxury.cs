@@ -8,10 +8,10 @@ namespace App_Inmobiliaria.PropertyTypes
 {
     internal class Luxury : Property
     {
-        public Luxury(string type, string sellerName, string clientName, string address) 
-            : base(type, sellerName, clientName, address)
+        public Luxury(string sellerName, string clientName, string address, string propertyModel) 
+            : base("Lujo", sellerName, clientName, address)
         {
-            switch (type)
+            switch (propertyModel)
             {
                 case "Cosmopolitan":
                     saleAmount = 1020090m;
@@ -20,14 +20,14 @@ namespace App_Inmobiliaria.PropertyTypes
                     saleAmount = 900050m;
                     break;
                 default:
-                    throw new ArgumentException("Tipo de bien no existente.");
+                    throw new ArgumentException($"Este modelo de propiedad es inexistente {propertyModel}.");
             }
         }
 
-        public Luxury(string type, string sellerName, string clientName, string address, int months)
-            : base(type, sellerName, clientName, address)
+        public Luxury(string sellerName, string clientName, string address, string propertyModel, int months)
+        : base("Lujo", sellerName, clientName, address)
         {
-            switch (type)
+            switch (propertyModel)
             {
                 case "Cosmopolitan":
                     rentAmount = 35000m * months;
@@ -36,7 +36,7 @@ namespace App_Inmobiliaria.PropertyTypes
                     rentAmount = 20500m * months;
                     break;
                 default:
-                    throw new ArgumentException("Tipo de bien no existente.");
+                    throw new ArgumentException($"Este modelo de propiedad es inexistente {propertyModel}.");
             }
         }
     }

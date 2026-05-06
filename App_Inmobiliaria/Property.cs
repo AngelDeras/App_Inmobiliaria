@@ -24,14 +24,8 @@ namespace App_Inmobiliaria
             Address = address;
         }
 
-        public decimal CalculateSale()
-        {
-            return saleAmount;
-        }
-
-        public decimal CalculateRent()
-        {
-            return rentAmount;
-        }
+        // Funciones flecha, asi lo empezare a hacer en proyectos que apliquen
+        public decimal CalculateSale() => saleAmount;
+        public decimal CalculateRent() => rentAmount;
     }
 }

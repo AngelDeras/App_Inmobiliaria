@@ -8,9 +8,9 @@ namespace App_Inmobiliaria.PropertyTypes
 {
     internal class Land : Property
     {
-        public Land(string type, string sellerName, string clientName, string address, double area) : base(type, sellerName, clientName, address)
+        public Land(string sellerName, string clientName, string address, string propertyModel, double area) : base("Terrenos", sellerName, clientName, address)
         {
-            switch (type)
+            switch (propertyModel)
             {
                 case "Residencial":
                     saleAmount = (decimal)area * 1590m;
@@ -23,7 +23,7 @@ namespace App_Inmobiliaria.PropertyTypes
             }
         }
 
-        public Land(string type, string sellerName, string clientName, string address, double area, decimal months) : base(type, sellerName, clientName, address)
+        public Land(string sellerName, string clientName, string address, string propertyModel, double area, decimal months) : base("Terrenos", sellerName, clientName, address)
         {
             switch (type)
             {

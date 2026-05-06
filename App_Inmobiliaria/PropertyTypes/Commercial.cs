@@ -8,9 +8,9 @@ namespace App_Inmobiliaria.PropertyTypes
 {
     internal class Commercial : Property
     {
-        public Commercial(string type, string sellerName, string clientName, string address) : base(type, sellerName, clientName, address)
+        public Commercial(string sellerName, string clientName, string address, string propertyModel) : base("Comerciales", sellerName, clientName, address)
         {
-            switch (type)
+            switch (propertyModel)
             {
                 case "Torreon":
                     saleAmount = 765000m;
@@ -19,13 +19,13 @@ namespace App_Inmobiliaria.PropertyTypes
                     saleAmount = 589098m;
                     break;
                 default:
-                    throw new ArgumentException("Tipo de bien no existente.");
+                    throw new ArgumentException($"Este modelo de propiedad es inexistente {propertyModel}.");
             }
         }
 
-        public Commercial(string type, string sellerName, string clientName, string address, int months) : base(type, sellerName, clientName, address)
+        public Commercial(string sellerName, string clientName, string address, string propertyModel, int months) : base("Comerciales", sellerName, clientName, address)
         {
-            switch (type)
+            switch (propertyModel)
             {
                 case "Torreon":
                     rentAmount = 8500m * months;
@@ -34,7 +34,7 @@ namespace App_Inmobiliaria.PropertyTypes
                     rentAmount = 4500m * months;
                     break;
                 default:
-                    throw new ArgumentException("Tipo de bien no existente.");
+                    throw new ArgumentException($"Este modelo de propiedad es inexistente {propertyModel}.");
             }
         }
     }
