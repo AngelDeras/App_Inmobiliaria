@@ -19,7 +19,7 @@ namespace App_Inmobiliaria.PropertyTypes
                     saleAmount = (decimal)area * 950m;
                     break;
                 default:
-                    throw new ArgumentException("Tipo de bien no existente.");
+                    throw new ArgumentException($"Este modelo de propiedad es inexistente {propertyModel}.");
             }
         }
 
@@ -34,7 +34,7 @@ namespace App_Inmobiliaria.PropertyTypes
                     saleAmount = (decimal)area * 569m * months;
                     break;
                 default:
-                    throw new ArgumentException("Tipo de bien no existente.");
+                    throw new ArgumentException($"Este modelo de propiedad es inexistente {propertyModel}.");
             }
         }
     }
