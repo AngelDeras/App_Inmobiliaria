@@ -16,7 +16,7 @@ namespace App_Inmobiliaria.PropertyTypes
                     saleAmount = 765000m;
                     break;
                 case "Gomez Palacio":
-                    saleAmount = 589.098m;
+                    saleAmount = 589098m;
                     break;
                 default:
                     throw new ArgumentException("Tipo de bien no existente.");
